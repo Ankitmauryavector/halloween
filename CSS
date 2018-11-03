@@ -1,0 +1,476 @@
+
+@import url("https://fonts.googleapis.com/css?family=Eater");
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+*{
+    
+    margin:0;
+    box-sizing:border-box;
+    outline:none;
+}
+
+html{
+    height:100%;
+}
+
+body{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction:column;
+    background-color:black;
+    color:white;
+    overflow:hidden;
+}
+
+
+.face{
+    border:2px outset black;
+    position:relative;
+    width:100px;
+    height:110px;
+    border-radius:40%;
+    background-color:#F0B27A ;
+}
+
+.face:before{
+    content:"";
+    position:absolute;
+    top:-60px;
+    left:-35px;
+    width:100px;
+    height:100px;
+    background-color:black;
+    border-radius:50%;
+    z-index:2;
+}
+
+.face:after{
+    content:"";
+    position:absolute;
+    top:-20px;
+    right:-15px;
+    width:70px;
+    height:50px;
+    background-color:black;
+    border-radius:50%;
+    transform:rotate(45deg);
+    z-index:2;
+}
+
+.eye{
+    width:30px;
+    height:20px;
+    position:absolute;
+    top:40%;
+    background-color:transparent;
+    border-radius:50%;
+    overflow:hidden;
+    
+    
+}
+
+.lefteye{
+    left:10%;
+    animation:lefteyerotate 1s 8s;
+    animation-fill-mode:forwards;
+}
+
+.righteye{
+
+    right:10%;
+    animation:righteyerotate 1s 8s;
+    animation-fill-mode:forwards;
+}
+
+.eye:before{
+    content:"";
+    position: absolute;
+    top:50%;
+    left:50%;
+   /* width:12px;
+    height:12px;*/
+    border-radius:50%;
+    background-color:black;
+    z-index:2;
+    transform:translate(-50%,-50%);
+    animation:eyeSize 3s;
+    animation-play-state:inherit;
+
+}
+
+.lefteye .inside_eye{
+    position:absolute;
+    width:100px;
+    height:100px;
+    background-color:white;
+    transform:translate(-19%, -19%);
+    animation:hallowleft 2s 6s;
+    animation-fill-mode: forwards;
+    animation-play-state:inherit;
+}
+
+.righteye .inside_eye{
+    position:absolute;
+    width:100px;
+    height:100px;
+    background-color:white;
+    transform:translate(-19%, -19%);
+    animation:hallowright 2s 6s;
+    animation-fill-mode: forwards;
+    animation-play-state:inherit;
+}
+
+
+.text{
+    
+    position:absolute;
+    top:50%; 
+    width:100%;
+    padding-left:100px;
+    padding-right:100px;
+    letter-spacing:3px;
+    font-weight:900;
+    color:red;
+    opacity:0;
+    font-size:1.4em;
+    font-family:eater, serif;
+    transition:all 2s;
+    animation:
+    textanime 2s 9s infinite;
+              
+}
+
+.halloween{
+   float:right;
+   
+}
+@keyframes eyeSize{
+    0%{
+        
+        width:10px;
+        height:10px;
+        
+    }
+    50%{
+        width:10px;
+        height:10px;
+    }
+    100%{
+        
+        width:0px;
+        height:0px;
+    
+    }
+
+}
+
+
+@keyframes lefteyerotate{
+    0%{
+        transform:rotate(0deg);
+    }
+    50%{
+        border-radius:0 0 50% 50%;
+        height:20px;
+    }
+    100%{
+         border-radius:0 0 50% 50%;
+        height:20px;
+        transform:rotate(30deg);
+        
+    }
+}
+
+@keyframes righteyerotate{
+    0%{
+        transform:rotate(0deg);
+    }
+    50%{
+        border-radius:0 0 50% 50%;
+        height:20px;
+    }
+    100%{
+         border-radius:0 0 50% 50%;
+        height:20px;
+        transform:rotate(-30deg);
+    }
+}
+
+@keyframes hallowleft{
+   0%{
+     background-color:white;
+   }
+   50%{
+     background-color:black;
+
+   }
+   100%{
+    border-style:2px inset red;
+    background-image:radial-gradient(farthest-corner at 80% 20%,red 10%,black 80%); 
+   }
+}
+
+@keyframes hallowright{
+   0%{
+     background-color:white;
+   }
+   50%{
+     background-color:black;
+
+   }
+   100%{
+    border-style:2px inset red;
+    background-image:radial-gradient(farthest-corner at 70% 50%,black 10%,red 80%); 
+   }
+}
+
+
+@keyframes textanime{
+    0%{
+        opacity:0.2;
+        text-shadow: 1px 1px 0px #ECC6BE,  
+                     1px -1px 0px #ECC6BE,
+                     -1px 1px 0px #ECC6BE,
+                     -1px -1px 0px #ECC6BE;
+        transform:translateX(-20px);
+    }
+    40%{
+         opacity:0.8;
+        text-shadow: 5px 5px 0px #8C2A15,  
+                     5px -5px 0px #8C2A15,
+                     -5px 5px 0px #8C2A15,
+                     -5px -5px 0px #8C2A15;
+        transform:translateX(-20px);
+    }
+        
+    
+    60%{
+        opacity:0.8;
+        text-shadow: 5px 5px 0px #8C2A15,  
+                     5px -5px 0px #8C2A15,
+                     -5px 5px 0px #8C2A15,
+                     -5px -5px 0px #8C2A15;
+        transform:translateX(10px);
+    }
+    100%{
+        opacity:0.2;
+        text-shadow: 1px 1px 0px #ECC6BE,  
+                     1px -1px 0px #ECC6BE,
+                     -1px 1px 0px #ECC6BE,
+                     -1px -1px 0px #ECC6BE;
+        transform:translateX(-10px);
+    }
+}
+
+
+@media screen and (max-width:640px){
+    .text{
+        width:100%;
+        top:auto;
+        bottom:20px;
+        text-align:center;
+       
+    }
+    .halloween{
+        float:none;
+    }
+
+}
+
+.mouth{
+    position:absolute;
+    left:50%;
+    bottom:10%;
+    width:10px;
+    height:10px;
+    transform: translate(-50%,-50%) rotateX(-180deg);
+    border-radius:50%;
+    border-bottom:2px solid black;
+    animation:mouthanime 4s 5s;
+    animation-fill-mode:forwards;
+}
+
+@keyframes mouthanime{
+    0%{
+        
+    border-radius:50%;
+    }
+    50%{
+    
+        
+    
+    border-radius:0;
+    }
+    100%{transform: 
+        translate(-50%,-90%)
+         rotateX(0deg);
+    border-radius:50%;
+    }
+    
+}
+
+.rain{
+    height:100%;
+    background-image:url("https://raw.githubusercontent.com/prathu9/prathu9.github.io/master/js/halloween/rain.png");
+     position:absolute;
+    width:100%;
+    height:100%;
+    display:none;
+    /*transform:rotateX(180deg);*/
+    animation:rain .3s linear infinite;
+    z-index:10;
+}
+
+@keyframes rain{
+    0%{ 
+        background-position:0% 0%;
+    }
+    100%{
+        background-position:50% 100%;
+    }
+}
+
+
+.lightning{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-color:white;
+    opacity:0;
+    animation:flash 
+    2s 10s infinite;
+    z-index:3;
+}
+
+@keyframes flash{
+    0%{
+        opacity:0;
+    }
+    5%{
+        opacity:0;
+    }
+    10%{
+        opacity:0;
+    }
+    15%{
+        opacity:1;
+    }
+    20%{
+        opacity:0;
+    }
+    25%{
+        opacity:1;
+    }
+    30%{
+        opacity:0;
+    }
+    35%{
+        opacity:0;
+    }
+    40%{
+        opacity:0;
+    }
+    45%{
+        opacity:0;
+    }
+    50%{
+        opacity:0;
+    }
+    55%{
+        opacity:0;
+    }
+    60%{
+        opacity:0;
+    }
+    65%{
+        opacity:0;
+    }
+    70%{
+        opacity:0;
+    }
+    75%{
+        opacity:0;
+    }
+    80%{
+        opacity:0;
+    }
+    85%{
+        opacity:0;
+    }
+    90%{
+        opacity:0;
+    }
+    95%{
+        opacity:0;
+    }
+    100%{
+        opacity:0;
+    }
+}
+
+.skull{
+    width:180px;
+    height:110px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    -webkit-transform:translate(-50%,-50%);
+    
+}
+
+#enter{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:300px;
+    height:80%;
+    z-index:10;
+    background-image:linear-gradient(to bottom right, #632E22,#8B4131);
+   box-shadow: 9px 8px 30px rgba(255, 255, 255, 0.15),
+   -9px 8px 30px rgba(255, 255, 255, 0.15);
+   overflow:hidden;
+   padding:2px;
+            
+
+}
+
+#enter p{
+    position:absolute;
+    top:10%;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:1em;
+    font-family:Roboto, sans-serif;
+   
+    font-weight:500;
+    overflow-y:scroll;
+    width:80%;
+    height:70%;
+    
+}
+
+#okBtn{
+    position:absolute;
+    bottom:20px;
+    left:50%;
+    width:60px;
+    height:30px;
+    background-color:transparent;
+    border:2px solid black;
+    transform:translateX(-50%);
+}
+
+.nany{
+    width:inherit;
+    height:inherit;
+    opacity:0.2;
+}
+
+.anime{
+    animation-play-state: paused;
+}h
